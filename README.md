@@ -3,6 +3,9 @@ Generate CSR (Certificate Signing Request) with RSA or EC
 
 To use in code
 
+Download CryptoAPI folder, Extract and pick CryptoAPI.framework and drag into your code, add this into Ebedded Binaries. 
+import #import <CryptoAPI/CryptoAPI.h> into your class where you want to generate CSR and write following code.
+
       NSString * currentlLoginEmailAddress = @"test102@test.com"; // Unique string use as alias for Keypairs
       NSString * bundleID = @"com.myCompany.myApp"; // Bundle ID of your App use as Application Tag
       NSString * userName = @"user name"; // User Name or name for organization which use in Certificate
