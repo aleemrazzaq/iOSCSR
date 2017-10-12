@@ -1,0 +1,11 @@
+framework module CryptoAPI {
+  umbrella header "CryptoAPI.h"
+
+  export *
+  module * { export * }
+}
+
+module CryptoAPI.Swift {
+    header "CryptoAPI-Swift.h"
+    requires objc
+}
