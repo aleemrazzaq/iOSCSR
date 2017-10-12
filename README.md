@@ -19,17 +19,21 @@ import #import <CryptoAPI/CryptoAPI.h> into your class where you want to generat
       keyPairAttributes.keyApplicationTag = bundleID;
 
       KeyPairManager * keypairManager = [[KeyPairManager alloc] init];
+      //delete old keypair with same alias if exist.
       [keypairManager deleteKeyPairWithKeyTag:currentlLoginEmailAddress];
+      //generate keypair from keypair attributes
       [keypairManager generateKeyPair:keyPairAttributes completionHandler:^(OSStatus status) {
+      //get private key with alias and prompt message that will appear in Touch ID dialog.
           SecKeyRef privateKey = [keypairManager getPrivateKeyWithKeyTag:currentlLoginEmailAddress prompotMessage:@""];
           if (privateKey != nil) {
-        
+        // get public in data format 
             NSData * publicKeyData = [keypairManager getPublicKeyWithKeyTag:currentlLoginEmailAddress];
             
             SubjectDN * subjectDN = [[SubjectDN alloc] init];
             subjectDN.commonName = userName;
             subjectDN.serialNumber = randomNumber;
             subjectDN.emaiAddress = currentlLoginEmailAddress;
+            // generate certificate with all subject with Public key in data and private key in seckeyreference format
             NSString * csr = [[CertificateManager getInstance] generateCertificateSigningRequestWithSubjectDN:subjectDN publicKeyData:publicKeyData privateKey:privateKey];
             if (csr.length > 0) {
             NSLog(@"%@",csr);
