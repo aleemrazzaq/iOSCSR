@@ -33,3 +33,5 @@ To use in code
             }
         }
     }];
+
+The Final output will be CSR in string form and copy and past into https://certlogik.com/decoder/ to check output
