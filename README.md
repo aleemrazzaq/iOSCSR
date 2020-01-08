@@ -1,9 +1,9 @@
 # iOSCSR
-Generate CSR (Certificate Signing Request) with RSA or EC
-
+Generate CSR (Certificate Signing Request) with both RSA or EC
+Written in Swift and can be accessible in both Swift and Objective-C. 
 To use in code
 
-Download and Extract zip file and pick CryptoAPI.framework and drag into your code, add this into Ebedded Binaries. 
+Download and Extract zip file and get CryptoAPI.framework and drag into your code, add this into Ebedded Binaries. 
 import ***#import <CryptoAPI/CryptoAPI.h>*** into your class where you want to generate CSR and write following code.
 
       NSString * currentlLoginEmailAddress = @"test102@test.com"; // Unique string use as alias for Keypairs
