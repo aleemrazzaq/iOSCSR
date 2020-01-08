@@ -9,7 +9,7 @@ import ***#import <CryptoAPI/CryptoAPI.h>*** into your class where you want to g
       NSString * currentlLoginEmailAddress = @"test102@test.com"; // Unique string use as alias for Keypairs
       NSString * bundleID = @"com.myCompany.myApp"; // Bundle ID of your App use as Application Tag
       NSString * userName = @"user name"; // User Name or name for organization which use in Certificate
-      NSString * randomNumber = @"453963013"; // Any Serial number which use in Certificate.
+      NSString * randomNumber = @"453963013"; // Any Serial number which use in Certificate to identify.
 
       KeyPairAttributes * keyPairAttributes = [[KeyPairAttributes alloc] init];
       keyPairAttributes.keyLabel = currentlLoginEmailAddress;
